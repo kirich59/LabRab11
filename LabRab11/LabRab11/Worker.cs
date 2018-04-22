@@ -24,7 +24,7 @@ namespace LabRab11
         }
         public override void Show()
         {
-            Console.WriteLine("WORKER Имя: " + name + "\nФамилия: " + secondName + "\nСтаж: " + experience);
+            Console.WriteLine("\nWORKER Имя: " + name + " Фамилия: " + secondName + " Стаж: " + experience);
         }
     }
 }

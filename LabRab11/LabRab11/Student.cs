@@ -32,7 +32,7 @@ namespace LabRab11
         }
         public override void Show()
         {
-            Console.WriteLine("STUDENT Имя: " + name + "\nФамилия: " + secondName + "\nКурс: " + degree + "\nСредний балл за сессию: " + average);
+            Console.WriteLine("\nSTUDENT Имя: " + name + " Фамилия: " + secondName + " Курс: " + degree + " Средний балл за сессию: " + average);
         }
     }
 }

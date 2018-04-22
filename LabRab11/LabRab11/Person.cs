@@ -30,9 +30,9 @@ namespace LabRab11
             name = Name;
             secondName = SecondName;
         }
-        public void Show()
+        virtual public void Show()
         {
-            Console.WriteLine("Имя: " + name + "\nФамилия: " + secondName);
+            Console.WriteLine("PERSON Имя: " + name + "\nФамилия: " + secondName);
         }
     }
 

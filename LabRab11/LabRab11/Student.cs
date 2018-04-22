@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LabRab11
 {
-    class Student:Person
+    class Student : Person
     {
         protected byte degree;    //курс
         protected double average; //средний балл за сессию
@@ -25,10 +25,14 @@ namespace LabRab11
             degree = 0;
             average = 0;
         }
-        public Student(string Name, string SecondName,byte Degree,double Average) : base(Name, SecondName)
+        public Student(string Name, string SecondName, byte Degree, double Average) : base(Name, SecondName)
         {
             degree = Degree;
             average = Average;
+        }
+        public override void Show()
+        {
+            Console.WriteLine("STUDENT Имя: " + name + "\nФамилия: " + secondName + "\nКурс " + degree + "\nСредний балл за сессию: " + average);
         }
     }
 }

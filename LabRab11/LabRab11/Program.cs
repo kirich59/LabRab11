@@ -140,7 +140,7 @@ namespace LabRab11
                     s.Show();
             }
         }
-        private static void Menu2()
+        private static void Menu2()  //ЗАДАНИЕ 2
         {
             bool exit = false;
             while (!exit)

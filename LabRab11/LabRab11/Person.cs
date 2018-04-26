@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace LabRab11
 {
-    class Person
+    public interface IPeople
+    {
+        string Description();
+    }
+    abstract public class Person : IPeople, IComparable
     {
         protected string name;
         protected string secondName;
@@ -33,6 +37,16 @@ namespace LabRab11
         virtual public void Show()
         {
             Console.WriteLine("PERSON Имя: " + name + "\nФамилия: " + secondName);
+        }
+        public int CompareTo(object obj)
+        {
+            Person p = (Person)obj;
+            if (this.Name.CompareTo(p.Name) == 0) return this.SecondName.CompareTo(p.SecondName);
+            return this.Name.CompareTo(p.Name);
+        }
+        public string Description()
+        {
+            return null;
         }
     }
 

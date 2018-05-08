@@ -16,7 +16,8 @@ namespace LabRab11
         }
         public Worker() : base()
         {
-            experience = 0;
+            Random rnd = new Random();
+            experience = rnd.Next(0,81);
         }
         public Worker(string Name, string SecondName,int Experience) : base(Name, SecondName)
         {

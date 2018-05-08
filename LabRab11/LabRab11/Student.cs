@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LabRab11
 {
-    class Student : Person
+    class Student : Person, ICloneable
     {
         protected byte degree;    //курс
         protected double average; //средний балл за сессию
@@ -22,8 +22,9 @@ namespace LabRab11
         }
         public Student() : base()
         {
-            degree = 0;
-            average = 0;
+            Random rnd = new Random();
+            degree = (byte)rnd.Next(0, 6);
+            average = Math.Round(rnd.Next(0, 10) + rnd.NextDouble(), 2);
         }
         public Student(string Name, string SecondName, byte Degree, double Average) : base(Name, SecondName)
         {
@@ -33,6 +34,14 @@ namespace LabRab11
         public override void Show()
         {
             Console.WriteLine("\nSTUDENT Имя: " + name + " Фамилия: " + secondName + " Курс: " + degree + " Средний балл за сессию: " + average);
+        }
+        public Student ShallowCopy()  //поверхностное копирование
+        {
+            return (Student)this.MemberwiseClone();
+        }
+        public object Clone()        //глубокое клонирование
+        {
+            return new Student("Клон " + name, secondName, degree, average);
         }
     }
 }

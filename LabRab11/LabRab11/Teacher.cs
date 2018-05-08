@@ -9,6 +9,7 @@ namespace LabRab11
     class Teacher : Person
     {
         protected string department; //кафедра
+        protected string[] subjects = ("Математика Физика Программирование Физкультура Экономика Менеджмент Ин.Яз.").Split(' ');
         public string Department
         {
             get { return department; }
@@ -16,7 +17,8 @@ namespace LabRab11
         }
         public Teacher() : base()
         {
-            department = "";
+            Random rnd = new Random();
+            department = subjects[rnd.Next(0, 7)];
         }
         public Teacher(string Name, string SecondName, string Department) : base(Name, SecondName)
         {

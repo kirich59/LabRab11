@@ -46,6 +46,9 @@ namespace LabRab11
             arr[1] = new Student("Петр", "Петров", (Byte)rnd.Next(1, 5), rnd.Next(0, 11));
             arr[2] = new Student("Олег", "Синицын", (Byte)rnd.Next(1, 5), rnd.Next(0, 11));
             arr[3] = new Student("Фёдор", "Конюхов", (Byte)rnd.Next(1, 5), rnd.Next(0, 11));
+            Console.WriteLine("Все студенты :");
+            foreach (Student s in arr)
+                s.Show();
             int degree;
             Console.WriteLine("Введите курс :");
             InputNumber(1, 4, out degree);
@@ -53,9 +56,6 @@ namespace LabRab11
             foreach (Student s in arr)
                 if (s.Degree == (byte)degree)
                     Console.WriteLine(s.Name + " " + s.SecondName);
-            Console.WriteLine("Все студенты :");
-            foreach (Student s in arr)
-                s.Show();
         }
         private static void WorkersByExperience()  //Количество рабочих со стажем не менее заданного
         {
@@ -65,6 +65,9 @@ namespace LabRab11
             arr[1] = new Worker("Петр", "Петров", rnd.Next(0, 81));
             arr[2] = new Worker("Олег", "Синицын", rnd.Next(0, 81));
             arr[3] = new Worker("Фёдор", "Конюхов", rnd.Next(0, 81));
+            Console.WriteLine("Все работники :");
+            foreach (Worker s in arr)
+                s.Show();
             int experience;
             Console.WriteLine("Введите стаж :");
             InputNumber(0, 80, out experience);
@@ -73,9 +76,6 @@ namespace LabRab11
                 if (s.Experience >= experience)
                     kol++;
             Console.WriteLine("Число работников со стажем не менее {0} лет = {1} ", experience, kol);
-            Console.WriteLine("Все работники :");
-            foreach (Worker s in arr)
-                s.Show();
         }
         private static void AverageMark()  //Средний балл за сессию заданного студента
         {
@@ -85,6 +85,9 @@ namespace LabRab11
             arr[1] = new Student("Петр", "Петров", (Byte)rnd.Next(1, 5), rnd.Next(0, 11));
             arr[2] = new Student("Олег", "Синицын", (Byte)rnd.Next(1, 5), rnd.Next(0, 11));
             arr[3] = new Student("Фёдор", "Конюхов", (Byte)rnd.Next(1, 5), rnd.Next(0, 11));
+            Console.WriteLine("Все студенты :");
+            foreach (Student s in arr)
+                s.Show();
             Console.WriteLine("Введите имя :");
             string name = Console.ReadLine();
             Console.WriteLine("Введите фамилию : ");
@@ -104,9 +107,6 @@ namespace LabRab11
             else
             {
                 Console.WriteLine("Средний балл за сессию студента {0} : {1}", name + " " + FName, arr[num].Average);
-                Console.WriteLine("Все студенты :");
-                foreach (Student s in arr)
-                    s.Show();
             }
         }
         private static void TeachersByDepartment()  //Имена преподавателей указанной кафедры
@@ -117,6 +117,9 @@ namespace LabRab11
             arr[1] = new Teacher("Петр", "Петров", "Философия");
             arr[2] = new Teacher("Олег", "Синицын", "Математика");
             arr[3] = new Teacher("Фёдор", "Конюхов", "Физика");
+            Console.WriteLine("Все преподаватели :");
+            foreach (Teacher s in arr)
+                s.Show();
             Console.WriteLine("Введите кафедру :");
             string dep = Console.ReadLine();
             bool id = false;
@@ -131,13 +134,10 @@ namespace LabRab11
             if (!id) Console.WriteLine("Такой кафедры не найдено");
             else
             {
-                Console.WriteLine("Имена преподавателей кафедры {0} :",dep);
+                Console.WriteLine("Имена преподавателей кафедры {0} :", dep);
                 foreach (Teacher s in arr)
-                    if (s.Department==dep)
+                    if (s.Department == dep)
                         Console.WriteLine(s.Name + " " + s.SecondName);
-                Console.WriteLine("Все преподаватели :");
-                foreach (Teacher s in arr)
-                    s.Show();
             }
         }
         private static void Menu2()  //ЗАДАНИЕ 2
@@ -172,6 +172,82 @@ namespace LabRab11
                 }
             }
         }
+        private static Person[] RndCreate()  //создание массива объектов различных классов
+        {
+            Student s1 = new Student();
+            Student s2 = new Student();
+            Teacher t1 = new Teacher();
+            Worker w1 = new Worker();
+            Person[] arr = new Person[4];
+            arr[0] = s1;
+            arr[1] = s2;
+            arr[2] = t1;
+            arr[3] = w1;
+            return arr;
+        }
+        private static void RndSort()  //сортировка объектов различных классов
+        {
+            Person[] arr = RndCreate();
+            Array.Sort(arr);
+            foreach (Person p in arr)
+                p.Show();
+        }
+        private static void CopyStudent()  //клонирование студента
+        {
+            Student std = new Student();
+            Student clone = (Student)std.Clone();
+            std.Show();
+            Console.WriteLine("Клон :");
+            clone.Show();
+            Console.WriteLine("Копия :");
+            std.ShallowCopy().Show();
+        }
+        private static void FindElem()  //поиск элемента
+        {
+            Person[] arr = RndCreate();
+            foreach (Person p in arr)
+                p.Show();
+            Console.WriteLine("Введите имя :");
+            string name = Console.ReadLine();
+            Console.WriteLine("Введите фамилию :");
+            string surname = Console.ReadLine();
+            Student s = new Student(name, surname, 0, 0);
+            Array.Sort(arr);
+            int index = Array.BinarySearch(arr, s);
+            if (index < 0) Console.WriteLine("Не найден");
+            else
+            {
+                arr[index].Show();
+            }
+        }
+        private static void Menu3()  //задание 3
+        {
+            bool exit = false;
+            while (!exit)
+            {
+                Console.WriteLine("1. Сортировка элементов различных классов по имени и фамилии.\n"
+                    + "2. Клонирование студента.\n"
+                    + "3. Поиск элемента в массиве.\n"
+                    + "4. Выход.");
+                int sw;
+                InputNumber(1, 4, out sw);
+                switch (sw)
+                {
+                    case 1:
+                        RndSort();
+                        break;
+                    case 2:
+                        CopyStudent();
+                        break;
+                    case 3:
+                        FindElem();
+                        break;
+                    case 4:
+                        exit = true;
+                        break;
+                }
+            }
+        }
         private static void ShowMenu()
         {
             bool exit = false;
@@ -192,6 +268,7 @@ namespace LabRab11
                         Menu2();
                         break;
                     case 3:
+                        Menu3();
                         break;
                     case 4:
                         exit = true;

@@ -14,6 +14,12 @@ namespace LabRab11
     {
         protected string name;
         protected string secondName;
+        protected string[] names = ("Август, Августин, Аврор, Агап, Адам, Аксён, Алевтин, Александр, Алексей, Алексий, Альберт, Анастасий, Анатолий, Анвар, Андрей, Андрон, " +
+    "Гавриил, Гаврила, Гайдар, Гаспар, Гений, Геннадий, Георгий, Герман, Гермоген, Глеб, Григорий, Дан, Даниил, Данила, Дар, Дементий, Демид, Демократ, Демьян, Денис, Дидим, " +
+    "Казимир, Капитон, Каспар, Ким, Кир, Кирилл, Клавдий, Клементий, Кондратий, Кондрат, Константин, Краснослав, Кузьма, Лавр, Лаврентий, Лазарь, Ларион, Лев, Леонид, Леонтий, " +
+    "Октябрь, Олег, Ольгерд, Онисим, Осип, Оскар, Остап, Остромир, Павел, Пантелеймон, Панфил, Парамон, Пахом, Пересвет, Пётр, Платон, Потап,").Replace(",", "").Replace("ё", "е").Split(' ');
+        protected string[] surnames = ("Иванов Смирнов Кузнецов Попов Васильев Петров Соколов Михайлов Новиков Федоров Морозов Волков Алексеев Лебедев Семенов Егоров " +
+            "Павлов Козлов Степанов Николаев").Split(' ');
         public string Name
         {
             get { return name; }
@@ -26,18 +32,17 @@ namespace LabRab11
         }
         public Person()
         {
-            name = "";
-            secondName = "";
+            System.Threading.Thread.Sleep(50);
+            Random rnd = new Random();
+            name = names[rnd.Next(0, names.Length)];
+            secondName = surnames[rnd.Next(0, surnames.Length)];
         }
         public Person(string Name, string SecondName)
         {
             name = Name;
             secondName = SecondName;
         }
-        virtual public void Show()
-        {
-            Console.WriteLine("PERSON Имя: " + name + "\nФамилия: " + secondName);
-        }
+        public abstract void Show();
         public int CompareTo(object obj)
         {
             Person p = (Person)obj;
@@ -46,7 +51,7 @@ namespace LabRab11
         }
         public string Description()
         {
-            return null;
+            return "PERSON Имя: " + name + "\nФамилия: " + secondName;
         }
     }
 

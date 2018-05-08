@@ -3,7 +3,7 @@
   <Class Name="LabRab11.Person">
     <Position X="9" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAgAAQAAAAAAAQAAAAEAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgAAAAgAAQAAAAAAgQAAAAEAAAACAAAAAAAAIA=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -11,7 +11,7 @@
   <Class Name="LabRab11.Student">
     <Position X="5.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAQAAAEEAAAAAAAAAAgABA=</HashCode>
+      <HashCode>ACAAAAAAAAAgAAAAAAAAAAAQAAAEEAAAAAAAABAgABA=</HashCode>
       <FileName>Student.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -19,19 +19,19 @@
   <Class Name="LabRab11.Teacher">
     <Position X="3.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQEAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAgAAAAAAAAAAAQEAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Teacher.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="LabRab11.Worker">
     <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAABAAAAAQAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAEAAAAAABAAAAAQAA=</HashCode>
       <FileName>Worker.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="LabRab11.IPeople">
-    <Position X="12" Y="3.75" Width="1.5" />
+    <Position X="11.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Person.cs</FileName>

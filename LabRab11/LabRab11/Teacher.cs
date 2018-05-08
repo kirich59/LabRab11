@@ -28,5 +28,9 @@ namespace LabRab11
         {
             Console.WriteLine("\nTEACHER Имя: " + name + " Фамилия: " + secondName + " Кафедра: " + department);
         }
+        public override string Description()
+        {
+            return "Имя: " + name + " Фамилия: " + secondName + " Кафедра: " + department;
+        }
     }
 }

@@ -49,10 +49,7 @@ namespace LabRab11
             if (this.Name.CompareTo(p.Name) == 0) return this.SecondName.CompareTo(p.SecondName);
             return this.Name.CompareTo(p.Name);
         }
-        public string Description()
-        {
-            return "PERSON Имя: " + name + "\nФамилия: " + secondName;
-        }
+        public abstract string Description();
     }
 
 }

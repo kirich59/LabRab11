@@ -43,5 +43,9 @@ namespace LabRab11
         {
             return new Student("Клон " + name, secondName, degree, average);
         }
+        public override string Description()
+        {
+            return "Имя: " + name + " Фамилия: " + secondName + " Курс: " + degree + " Средний балл за сессию: " + average;
+        }
     }
 }

@@ -27,5 +27,9 @@ namespace LabRab11
         {
             Console.WriteLine("\nWORKER Имя: " + name + " Фамилия: " + secondName + " Стаж: " + experience);
         }
+        public override string Description()
+        {
+            return "Имя: " + name + " Фамилия: " + secondName + " Стаж: " + experience;
+        }
     }
 }
